@@ -12,11 +12,12 @@
 8. babel-preset-es2015
 9. babel-preset-react
 10. babel-preset-stage-0
+11. babel-plugin-transform-decorators-legacy
 
 ## Target
 
 - [x] Migrate webpack settings from v1 to v2.
 - [x] Build production mode script.
+- [x] Babel setting adjust.(I need not do anything.)
 - [ ] webpack UglifyJsPlugin adjust.
-- [ ] Babel setting adjust.
 - [ ] React-hot-loader setting adjust.
