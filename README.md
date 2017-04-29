@@ -16,8 +16,38 @@
 
 ## Target
 
-- [x] Migrate webpack settings from v1 to v2.
+### npm / yarn: package.json
+
 - [x] Build production mode script.
-- [x] Babel setting adjust.(I need not do anything.)
-- [ ] webpack UglifyJsPlugin adjust.
-- [ ] React-hot-loader setting adjust.
+- [ ] Adjust devDependency and Dependency to serve CI-server and Production-server.
+
+### Webpack: webpack.config.bable.js, devServer.js
+
+- [x] Migrate webpack settings from v1 to v2.
+- [x] webpack ``` webpack.optimize.UglifyJsPlugin() ``` adjust.
+ > 1. using ``` webpack -p ``` command, webpack will auto add ``` webpack.optimize.UglifyJsPlugin() ```. If you add ``` webpack.optimize.UglifyJsPlugin() ``` and using ``` webpack -p ``` at the same time, you will get error message when you are building app.
+ > 2. If you want to ``` webpack.optimize.UglifyJsPlugin() ``` and ``` webpack -p ``` at the same time, you need to remove ``` config.devtool ``` option.
+
+### Babel: .babelrc
+
+- [x] New version babel setting adjust.(Need not do anything.)
+
+### Eslint: .eslintrc, package.json
+
+- [ ] Add eslint settings and script.
+- [x] Eslint run check script for auto check.
+
+### React
+
+- [x] React-hot-loader setting adjust.
+
+### CI server(prepare script)
+
+- [x] run ``` npm install --only=dev ``` to install only devDependency in package.json.
+- [ ] run ``` npm run eslint ``` to check coding rule.
+- [x] run ``` npm run build:prod ``` to bundle JavaScript for production mode.
+- [ ] run build script to devide enviroment to handle api url.
+
+### Production server(prepare script)
+
+- [ ] run only ``` npm run serve ``` to host index.html.

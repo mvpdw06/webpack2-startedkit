@@ -21,14 +21,14 @@ const getPluginsSetting = () => {
             new webpack.HotModuleReplacementPlugin()
         );
     } else {
-        // plugins.push(
-        //     new webpack.optimize.UglifyJsPlugin({
-        //         compress: {
-        //             warnings: false,
-        //             drop_console: false,
-        //         }
-        //     })
-        // );
+        plugins.push(
+            new webpack.optimize.UglifyJsPlugin({
+                compress: {
+                    warnings: false,
+                    drop_console: false,
+                }
+            })
+        );
     }
     return plugins;
 }
@@ -43,7 +43,7 @@ const webpackConfig = {
             }
         ]
     },
-    devtool: getDevtoolSetting(),
+    
     plugins: getPluginsSetting()
 }
 
